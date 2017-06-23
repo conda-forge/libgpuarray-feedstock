@@ -1,4 +1,4 @@
-{% set version = "0.6.5" %}
+{% set version = "0.6.7" %}
 
 package:
   name: libgpuarray
@@ -7,7 +7,7 @@ package:
 source:
   fn: libgpuarray-{{ version }}.tar.gz
   url: https://github.com/Theano/libgpuarray/archive/v{{ version }}.tar.gz
-  sha256: 29f44957a826083954d01de7009083fec4acb904bc51b48d3c667ef52c1f2c0b
+  sha256: 5d3d6f54e53ffe1a43ca86329cf3e5b8b8c1b412cf222df092d741a4de212c2e
 
 build:
   number: 0
