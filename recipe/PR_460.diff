@@ -1,0 +1,77 @@
+diff --git src/gpuarray/array.h src/gpuarray/array.h
+index a7aa8995..7c659964 100644
+--- src/gpuarray/array.h
++++ src/gpuarray/array.h
+@@ -8,12 +8,6 @@
+ #include <gpuarray/buffer.h>
+ #include <gpuarray/util.h>
+ 
+-#ifdef _MSC_VER
+-#ifndef inline
+-#define inline __inline
+-#endif
+-#endif
+-
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+diff --git src/gpuarray/config.h src/gpuarray/config.h
+index 571f81cf..fb452cc2 100644
+--- src/gpuarray/config.h
++++ src/gpuarray/config.h
+@@ -25,6 +25,9 @@
+ 
+ #ifdef _MSC_VER
+ #include <stddef.h>
++#ifndef inline
++#define inline __inline
++#endif
+ #if _MSC_VER < 1600
+ #include <gpuarray/wincompat/stdint.h>
+ #else
+diff --git src/gpuarray_buffer_opencl.c src/gpuarray_buffer_opencl.c
+index 7c452087..5d38aa90 100644
+--- src/gpuarray_buffer_opencl.c
++++ src/gpuarray_buffer_opencl.c
+@@ -15,10 +15,6 @@
+ #include "loaders/libclblas.h"
+ #include "loaders/libclblast.h"
+ 
+-#ifdef _MSC_VER
+-#define strdup _strdup
+-#endif
+-
+ #define _unused(x) ((void)x)
+ #define SSIZE_MIN (-(SSIZE_MAX-1))
+ 
+diff --git src/private_config.h.in src/private_config.h.in
+index f58a03ed..ff038312 100644
+--- src/private_config.h.in
++++ src/private_config.h.in
+@@ -23,8 +23,6 @@ extern "C" {
+ /* God damn Microsoft ... */
+ #define snprintf _snprintf
+ #define strdup _strdup
+-/* MS VC++ 2008 does not support inline */
+-#define inline __inline
+ #define alloca _alloca
+ #endif
+ 
+diff --git src/util/error.h src/util/error.h
+index b7a50fc6..fc1ecb16 100644
+--- src/util/error.h
++++ src/util/error.h
+@@ -6,13 +6,6 @@
+ 
+ #include <gpuarray/error.h>
+ 
+-/* MSVC 2008 does not support "inline". */
+-#ifdef _MSC_VER
+-#ifndef inline
+-#define inline __inline
+-#endif
+-#endif
+-
+ /* 1024 - 4 for the int that goes after */
+ #define ERROR_MSGBUF_LEN 1020
+ 
