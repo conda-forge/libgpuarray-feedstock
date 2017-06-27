@@ -8,6 +8,13 @@ source:
   fn: libgpuarray-{{ version }}.tar.gz
   url: https://github.com/Theano/libgpuarray/archive/v{{ version }}.tar.gz
   sha256: 5d3d6f54e53ffe1a43ca86329cf3e5b8b8c1b412cf222df092d741a4de212c2e
+  patches:
+    #########################################################
+    # Workaround missing inline in VC 2008                  #
+    #                                                       #
+    # xref: https://github.com/Theano/libgpuarray/pull/460  #
+    #########################################################
+    - PR_460.diff
 
 build:
   number: 0
