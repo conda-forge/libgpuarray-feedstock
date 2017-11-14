@@ -7,7 +7,7 @@ package:
 source:
   fn: libgpuarray-{{ version }}.tar.gz
   url: https://github.com/Theano/libgpuarray/releases/download/v{{ version }}/libgpuarray-{{ version }}.tar.gz
-  sha256: f3389d817cf9b3232f9b21853f6e9644744b0d6843d6b8abacf9df626b7978c3
+  sha256: d802299cd97bc1831416e64e23a7711cff4895348f45acba345840c4de461bb8
 
 build:
   number: 0
