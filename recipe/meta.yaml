@@ -10,19 +10,13 @@ source:
   sha256: 887b6433a30282cb002117da89b05812c770fd9469f93950ff3866ddd02bfc64
 
 build:
-  number: 0
-  skip: true  # [win and py35]
-  features:
-    - vc9     # [win and py27]
-    - vc10    # [win and py34]
-    - vc14    # [win and py35]
-    - vc14    # [win and py36]
+  number: 1
 
 requirements:
   build:
-    - toolchain
-    - python     # [win]
     - cmake
+    - {{ compiler('c') }}
+  host:
 
 test:
   requires:
